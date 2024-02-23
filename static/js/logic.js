@@ -63,6 +63,7 @@ d3.json(url).then(function (data) {
   }).addTo(myMap);
 
   // Adding a legend
+  // The below was done through ChatGPT
 let legend = L.control({ position: "bottomright" });
 
 legend.onAdd = function (map) {
@@ -80,4 +81,7 @@ legend.onAdd = function (map) {
 legend.addTo(myMap);
 })
 
-
+let css = '.legend i { width: 18px; height: 18px; float: left; margin-right: 8px; opacity: 0.7; }';
+css += '.legend { background: white; padding: 10px; border-radius: 5px; line-height: 18px; }';
+document.getElementsByTagName('head')[0].innerHTML += '<style>' + css + '</style>';
+// End of the ChatGPT code
