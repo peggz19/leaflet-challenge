@@ -69,11 +69,11 @@ let legend = L.control({ position: "bottomright" });
 legend.onAdd = function (map) {
     let div = L.DomUtil.create("div", "legend");
     div.innerHTML += "<h4>Magnitude</h4>";
-    div.innerHTML += '<i style="background: green"></i> -10 to 10<br>';
+    div.innerHTML += '<i style="background: lightgreen"></i> -10 to 10<br>';
     div.innerHTML += '<i style="background: yellow"></i> 10 to 30<br>';
-    div.innerHTML += '<i style="background: orange"></i> 30 to 50<br>';
-    div.innerHTML += '<i style="background: darkorange"></i> 50 to 70<br>';
-    div.innerHTML += '<i style="background: red"></i> 70 to 90<br>';
+    div.innerHTML += '<i style="background: coral"></i> 30 to 50<br>';
+    div.innerHTML += '<i style="background: orange"></i> 50 to 70<br>';
+    div.innerHTML += '<i style="background: darkorange"></i> 70 to 90<br>';
     div.innerHTML += '<i style="background: red"></i> > 90';
     return div;
 };
