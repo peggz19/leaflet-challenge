@@ -28,7 +28,12 @@ d3.json(url).then(function (data) {
             }
 
             return L.circleMarker(latlng,mapStyle)
+        },
+        onEachFeature: function (feature, layer) {
+            layer.bindPopup(`<h2>Earthquake Details</h2> <hr> <h3> magnitude: ${feature.properties.mag} <br> place: ${feature.properties.place}  <br> time: ${Date(feature.properties.time)}</h3>`);
+            
         }
+
 
     })
 
@@ -57,3 +62,6 @@ d3.json(url).then(function (data) {
     collapsed: false
   }).addTo(myMap);
 })
+
+// Adding a legend
+let legend = L.control({ position: "bottomright" });
