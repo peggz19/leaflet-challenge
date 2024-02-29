@@ -30,7 +30,7 @@ d3.json(url).then(function (data) {
             return L.circleMarker(latlng,mapStyle)
         },
         onEachFeature: function (feature, layer) {
-            layer.bindPopup(`<h2>Earthquake Details</h2> <hr> <h3> magnitude: ${feature.properties.mag} <br> place: ${feature.properties.place}  <br> time: ${Date(feature.properties.time)}</h3>`);
+            layer.bindPopup(`<h2>Earthquake Details</h2> <hr> <h3> magnitude: ${feature.properties.mag}  <br> depth level: ${feature.geometry.coordinates[2]}<br> place: ${feature.properties.place}  <br> time: ${Date(feature.properties.time)} <br> depth level: ${feature.geometry.coordinates[2]}</h3>`);
             
         }
 
@@ -68,7 +68,7 @@ let legend = L.control({ position: "bottomright" });
 
 legend.onAdd = function (map) {
     let div = L.DomUtil.create("div", "legend");
-    div.innerHTML += "<h4>Magnitude</h4>";
+    div.innerHTML += "<h4>Depth Levels</h4>";
     div.innerHTML += '<i style="background: lightgreen"></i> -10 to 10<br>';
     div.innerHTML += '<i style="background: yellow"></i> 10 to 30<br>';
     div.innerHTML += '<i style="background: coral"></i> 30 to 50<br>';
